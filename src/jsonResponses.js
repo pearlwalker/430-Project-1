@@ -12,3 +12,11 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
     };
     response.end();
 };
+
+const error404 = (request, response) => {
+    const responseJSON = {
+        message: 'The page you are looking for was not found.',
+        id: 'notFound',
+    };
+    respondJSON(request, response, 404, responseJSON);
+};

@@ -20,3 +20,7 @@ const error404 = (request, response) => {
     };
     respondJSON(request, response, 404, responseJSON);
 };
+
+module.exports = {
+    error404,
+};

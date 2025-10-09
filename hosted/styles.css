@@ -21,3 +21,7 @@ body {
     color: lightgray;
     padding: 2rem;
 }
+
+.requestMethod{
+    color: mediumpurple;
+}

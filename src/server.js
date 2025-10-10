@@ -11,16 +11,6 @@ const urlStruct = {
     notFound: jsonHandler.notFound
 };
 
-const onRequest = (request, response) => {
-  const protocol = request.connection.encrypted ? 'https' : 'http';
-  const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
-
-  if(urlStruct[parsedUrl.pathname]) {
-    return urlStruct[parsedUrl.pathname](request, response);
-  };
-  return urlStruct.notFound(request, response);
-};
-
 const parseBody = (request, response, handler) => {
     const requestBody = [];
 
@@ -48,6 +38,16 @@ const handlePost = (request, response, parsedUrl) => {
 
 const handleGet = (request, response, parsedUrl) => {
 
+};
+
+const onRequest = (request, response) => {
+  const protocol = request.connection.encrypted ? 'https' : 'http';
+  const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
+
+  if(urlStruct[parsedUrl.pathname]) {
+    return urlStruct[parsedUrl.pathname](request, response);
+  };
+  return urlStruct.notFound(request, response);
 };
 
 http.createServer(onRequest).listen(port, () => {

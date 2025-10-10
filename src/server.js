@@ -18,11 +18,12 @@ const onRequest = (request, response) => {
   if(urlStruct[parsedUrl.pathname]) {
     return urlStruct[parsedUrl.pathname](request, response);
   };
-  return urlStruct.notFound(request, resposnse);
+  return urlStruct.notFound(request, response);
 };
 
 const parseBody = (request, response, handler) => {
     const requestBody = [];
+
 };
 
 http.createServer(onRequest).listen(port, () => {

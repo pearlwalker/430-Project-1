@@ -1,12 +1,10 @@
 const respondJSON = (request, response, statusCode, jsonObject) => {
     const jsonString = JSON.stringify(jsonObject);
 
-    const headers = {
+    response.writeHead(statusCode, {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(jsonString, 'utf8'),
-    };
-
-    response.writeHead(statusCode, headers);
+    });
     response.write(jsonString);
     response.end();
 };
@@ -24,7 +22,7 @@ const badRequest = (request, response) => {
         message: 'This request has the required parameters',
     };
 
-    if(!request.query.valid || request.query.valid !== 'true'){
+    if (!request.query.valid || request.query.valid !== 'true') {
         responseJSON.message = 'Missing valid query parameter set to true';
         responseJSON.id = 'badRequest';
         return respondJSON(request, response, 400, responseJSON);

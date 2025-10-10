@@ -33,7 +33,12 @@ const parseBody = (request, response, handler) => {
 };
 
 const handlePost = (request, response, parsedUrl) => {
-
+    switch (parsedUrl.pathname) {
+        case '/api/newTimezone':
+            break;
+        case '/api/changeGmtOffset':
+            break;
+    };
 };
 
 const handleGet = (request, response, parsedUrl) => {
@@ -49,7 +54,7 @@ const handleGet = (request, response, parsedUrl) => {
         default:
             htmlHandler.getIndex(request, response);
             break;
-    }
+    };
 };
 
 const onRequest = (request, response) => {

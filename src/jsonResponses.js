@@ -7,9 +7,7 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
     };
 
     response.writeHead(statusCode, headers);
-    if(request.method !== 'HEAD') {
-        response.write(jsonString);
-    };
+    response.write(jsonString);
     response.end();
 };
 

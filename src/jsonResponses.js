@@ -14,7 +14,11 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
 };
 
 const success = (request, response) => {
+    const responseJSON = {
+        message: 'This is a successful response!',
+    };
 
+    respondJSON(request, response, 200, responseJSON);
 };
 
 const badRequest = (request, response) => {

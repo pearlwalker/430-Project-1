@@ -25,6 +25,14 @@ const badRequest = (request, response) => {
     const responseJSON = {
         message: 'This request has the required parameters',
     };
+
+    if(!request.query.valid || request.query.valid !== 'true'){
+        responseJSON.message = 'Missing valid query parameter set to true';
+        responseJSON.id = 'badRequest';
+        return respondJSON(request, response, 400, responseJSON);
+    };
+
+    return respondJSON(request, response, 200, responseJSON);
 };
 
 const notFound = (request, response) => {

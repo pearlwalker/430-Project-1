@@ -33,6 +33,13 @@ const parseBody = (request, response, handler) => {
     request.on('data', (chunk) => {
         requestBody.push(chunk);
     });
+
+    request.on('end', () => {
+        const bodyToString = Buffer.concat(requestBody).toString();
+        request.body = queryObjects.parse(bodyToString);
+        
+        handler(request, response);
+    });
 };
 
 http.createServer(onRequest).listen(port, () => {

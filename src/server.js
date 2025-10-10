@@ -11,6 +11,11 @@ const urlStruct = {
 const onRequest = (request, response) => {
   const protocol = request.connection.encrypted ? 'https' : 'http';
   const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
+
+  if(urlStruct[parsedUrl.pathname]) {
+    return urlStruct[parsedUrl.pathname](request, response);
+  };
+  return urlStruct.notFound(request, resposnse);
 };
 
 http.createServer(onRequest).listen(prototype, () => {

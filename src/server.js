@@ -20,6 +20,6 @@ const onRequest = (request, response) => {
   return urlStruct.notFound(request, resposnse);
 };
 
-http.createServer(onRequest).listen(prototype, () => {
+http.createServer(onRequest).listen(port, () => {
     console.log(`Listening on 127.0.0.1: ${port}`);
 });

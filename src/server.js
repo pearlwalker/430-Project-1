@@ -29,6 +29,10 @@ const parseBody = (request, response, handler) => {
         response.statusCode = 400;
         response.end();
     });
+    
+    request.on('data', (chunk) => {
+        requestBody.push(chunk);
+    });
 };
 
 http.createServer(onRequest).listen(port, () => {

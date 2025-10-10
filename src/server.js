@@ -42,6 +42,14 @@ const parseBody = (request, response, handler) => {
     });
 };
 
+const handlePost = (request, response, parsedUrl) => {
+
+};
+
+const handleGet = (request, response, parsedUrl) => {
+
+};
+
 http.createServer(onRequest).listen(port, () => {
     console.log(`Listening on 127.0.0.1: ${port}`);
 });

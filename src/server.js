@@ -21,6 +21,10 @@ const onRequest = (request, response) => {
   return urlStruct.notFound(request, resposnse);
 };
 
+const parseBody = (request, response, handler) => {
+    const requestBody = [];
+};
+
 http.createServer(onRequest).listen(port, () => {
     console.log(`Listening on 127.0.0.1: ${port}`);
 });

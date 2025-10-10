@@ -13,7 +13,7 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
     response.end();
 };
 
-const error404 = (request, response) => {
+const notFound = (request, response) => {
     const responseJSON = {
         message: 'The page you are looking for was not found.',
         id: 'notFound',
@@ -22,5 +22,5 @@ const error404 = (request, response) => {
 };
 
 module.exports = {
-    error404,
+    notFound,
 };

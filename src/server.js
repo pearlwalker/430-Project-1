@@ -5,7 +5,7 @@ const jsonHandler = require('./jsonResponses.js');
 const urlStruct = {
     '/': htmlHandler.getIndex,
     '/styles.css': htmlHandler.getCSS,
-    notFound: jsonHandler.error404
+    notFound: jsonHandler.notFound
 };
 
 const onRequest = (request, response) => {

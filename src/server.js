@@ -19,7 +19,7 @@ const parseBody = (request, response, handler) => {
         response.statusCode = 400;
         response.end();
     });
-    
+
     request.on('data', (chunk) => {
         requestBody.push(chunk);
     });
@@ -27,7 +27,7 @@ const parseBody = (request, response, handler) => {
     request.on('end', () => {
         const bodyToString = Buffer.concat(requestBody).toString();
         request.body = queryObjects.parse(bodyToString);
-        
+
         handler(request, response);
     });
 };
@@ -37,17 +37,29 @@ const handlePost = (request, response, parsedUrl) => {
 };
 
 const handleGet = (request, response, parsedUrl) => {
-
+    switch (parsedUrl.pathname) {
+        case '/api/getTimezoneNames':
+            break;
+        case '/api/getTimezonesInCountry':
+            break;
+        case '/api/getCountriesWithTimezone':
+            break;
+        case '/api/getTimezonesFromTime':
+            break;
+        default:
+            htmlHandler.getIndex(request, response);
+            break;
+    }
 };
 
 const onRequest = (request, response) => {
-  const protocol = request.connection.encrypted ? 'https' : 'http';
-  const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
+    const protocol = request.connection.encrypted ? 'https' : 'http';
+    const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
 
-  if(urlStruct[parsedUrl.pathname]) {
-    return urlStruct[parsedUrl.pathname](request, response);
-  };
-  return urlStruct.notFound(request, response);
+    if (urlStruct[parsedUrl.pathname]) {
+        return urlStruct[parsedUrl.pathname](request, response);
+    };
+    return urlStruct.notFound(request, response);
 };
 
 http.createServer(onRequest).listen(port, () => {

@@ -22,7 +22,9 @@ const success = (request, response) => {
 };
 
 const badRequest = (request, response) => {
-
+    const responseJSON = {
+        message: 'This request has the required parameters',
+    };
 };
 
 const notFound = (request, response) => {

@@ -13,6 +13,14 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
     response.end();
 };
 
+const success = (request, response) => {
+
+};
+
+const badRequest = (request, response) => {
+
+};
+
 const notFound = (request, response) => {
     const responseJSON = {
         message: 'The page you are looking for was not found.',

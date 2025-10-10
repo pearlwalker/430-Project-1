@@ -24,6 +24,11 @@ const onRequest = (request, response) => {
 const parseBody = (request, response, handler) => {
     const requestBody = [];
 
+    request.on('error', (err) => {
+        console.dir(err);
+        response.statusCode = 400;
+        response.end();
+    });
 };
 
 http.createServer(onRequest).listen(port, () => {

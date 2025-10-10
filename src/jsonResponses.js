@@ -40,5 +40,7 @@ const notFound = (request, response) => {
 };
 
 module.exports = {
+    success,
+    badRequest,
     notFound,
 };

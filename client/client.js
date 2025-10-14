@@ -2,7 +2,11 @@ const collapsibles = document.querySelectorAll('.collapsible');
 const requestForm = document.querySelectorAll('.requestForm');
 
 const collapsibleEvents = () => {
+    collapsibles.forEach((button) => {
+        button.addEventListener('click', (e) => {
 
+        });
+    });
 };
 
 const handleResponse = async (response) => {

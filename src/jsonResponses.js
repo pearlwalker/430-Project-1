@@ -67,4 +67,10 @@ module.exports = {
     success,
     badRequest,
     notFound,
+    getTimezoneNames,
+    getTimezonesInCountry,
+    getCountriesWithTimezone,
+    getTimezonesFromTime,
+    newTimezone,
+    changeGmtOffset,
 };

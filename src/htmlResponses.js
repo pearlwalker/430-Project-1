@@ -5,6 +5,10 @@ const css = fs.readFileSync(`${__dirname}/../hosted/styles.css`);
 const bundle = fs.readFileSync(`${__dirname}/../hosted/bundle.js`);
 const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
+const serveFile = (response, file, contentType) => {
+    
+};
+
 const getIndex = (request, response) => {
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.write(index);

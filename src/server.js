@@ -8,6 +8,7 @@ const urlStruct = {
     '/': htmlHandler.getIndex,
     '/styles.css': htmlHandler.getCSS,
     '/bundle.js': htmlHandler.getBundle,
+    '/client.js': htmlHandler.getClient,
     '/countries.json': htmlHandler.getCountries,
     '/success': jsonHandler.success,
     '/badRequest': jsonHandler.badRequest,

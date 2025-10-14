@@ -22,10 +22,10 @@ body {
     padding: 2rem;
 }
 
-.requestMethods{
+.requestMethods {
     color: mediumpurple;
 }
 
-.requestForm { 
+.requestForm {
     display: none;
 }

@@ -1,3 +1,5 @@
+const collapsible = document.getElementsByClassName('collapsible');
+
 const handleResponse = async (response) => {
 
 };

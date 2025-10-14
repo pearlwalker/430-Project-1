@@ -46,12 +46,16 @@ const handlePost = (request, response, parsedUrl) => {
 const handleGet = (request, response, parsedUrl) => {
     switch (parsedUrl.pathname) {
         case '/api/getTimezoneNames':
+            jsonHandler.getTimezoneNames(request, response);
             break;
         case '/api/getTimezonesInCountry':
+            jsonHandler.getTimezonesInCountry(request, response);
             break;
         case '/api/getCountriesWithTimezone':
+            jsonHandler.getCountriesWithTimezone(request, response);
             break;
         case '/api/getTimezonesFromTime':
+            jsonHandler.getTimezonesFromTime(request, response);
             break;
         default:
             htmlHandler.getIndex(request, response);

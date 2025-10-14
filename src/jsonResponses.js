@@ -21,6 +21,10 @@ const getCountriesWithTimezone = (request, response) => {
 
 };
 
+const getTimezonesFromTime = (request, response) => {
+
+};
+
 const success = (request, response) => {
     const responseJSON = {
         message: 'This is a successful response!',

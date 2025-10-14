@@ -1,5 +1,5 @@
-const collapsible = document.getElementsByClassName('collapsible');
-const requestForm = document.getElementsByClassName('requestForm');
+const collapsible = document.querySelectorAll('.collapsible');
+const requestForm = document.querySelectorAll('.requestForm');
 
 const collapsibleEvents = () => {
     for (const element of collapsible) {

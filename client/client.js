@@ -4,7 +4,7 @@ const requestForm = document.querySelectorAll('.requestForm');
 const collapsibleEvents = () => {
     collapsibles.forEach((button, index) => {
         button.addEventListener('click', (e) => {
-            
+            const content = requestForm[index];
         });
     });
 };

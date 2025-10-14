@@ -29,6 +29,10 @@ const newTimezone = (request, response) => {
 
 };
 
+const changeGmtOffset = (request, response) => {
+
+};
+
 const success = (request, response) => {
     const responseJSON = {
         message: 'This is a successful response!',

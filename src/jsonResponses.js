@@ -9,12 +9,6 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
     response.end();
 };
 
-const getCountries = (request, response) => {
-    response.writeHead(200, {'Content-Type': 'application/json'});
-    response.write(countries);
-    response.end();
-};
-
 const getTimezoneNames = (request, response) => {
 
 };

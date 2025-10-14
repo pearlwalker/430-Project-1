@@ -27,6 +27,10 @@ const getBundle = (request, response) => {
     serveFile(response, bundle, 'application/javascript');
 };
 
+const getClient = (request, response) => {
+    serveFile(response, client, 'application/javascript');
+};
+
 const getCountries = (request, response) => {
     serveFile(response, countries, 'application/json');
 };

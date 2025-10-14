@@ -34,5 +34,5 @@ module.exports = {
     getIndex,
     getCSS,
     getBundle,
-    countries,
+    getCountries,
 };

@@ -1,8 +1,3 @@
-const fs = require('fs');
-
-const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
-
-
 const respondJSON = (request, response, statusCode, jsonObject) => {
     const jsonString = JSON.stringify(jsonObject);
 

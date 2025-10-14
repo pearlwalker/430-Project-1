@@ -1,12 +1,8 @@
-const collapsible = document.querySelectorAll('.collapsible');
+const collapsibles = document.querySelectorAll('.collapsible');
 const requestForm = document.querySelectorAll('.requestForm');
 
 const collapsibleEvents = () => {
-    for (const element of collapsible) {
-        element.addEventListener("click", () => {
-            
-        })
-    };
+
 };
 
 const handleResponse = async (response) => {

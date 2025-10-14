@@ -25,3 +25,7 @@ body {
 .requestMethods{
     color: mediumpurple;
 }
+
+.requestForm { 
+    display: none;
+}

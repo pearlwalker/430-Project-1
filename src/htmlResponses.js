@@ -26,6 +26,10 @@ const getBundle = (request, response) => {
     serveFile(response, bundle, 'application/javascript');
 };
 
+const getCountries = (request, response) => {
+    serveFile(response, countries, 'application/json');
+};
+
 module.exports = {
     getIndex,
     getCSS,

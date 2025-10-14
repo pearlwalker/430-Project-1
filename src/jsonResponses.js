@@ -9,6 +9,10 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
     response.end();
 };
 
+const getTimezoneNames = (request, response) => {
+
+};
+
 const success = (request, response) => {
     const responseJSON = {
         message: 'This is a successful response!',

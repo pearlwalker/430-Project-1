@@ -13,6 +13,10 @@ const getTimezoneNames = (request, response) => {
 
 };
 
+const getTimezonesInCountry = (request, response) => {
+
+};
+
 const success = (request, response) => {
     const responseJSON = {
         message: 'This is a successful response!',

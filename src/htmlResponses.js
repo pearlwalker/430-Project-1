@@ -15,21 +15,15 @@ const serveFile = (response, file, contentType) => {
 };
 
 const getIndex = (request, response) => {
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.write(index);
-    response.end();
+
 };
 
 const getCSS = (request, response) => {
-    response.writeHead(200, { 'Content-Type': 'text/css' });
-    response.write(css);
-    response.end();
+
 };
 
 const getBundle = (request, response) => {
-    response.writeHead(200, { 'Content-Type': 'text/javascript' });
-    response.write(bundle);
-    response.end();
+
 };
 
 module.exports = {

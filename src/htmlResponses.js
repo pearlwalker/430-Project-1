@@ -15,15 +15,15 @@ const serveFile = (response, file, contentType) => {
 };
 
 const getIndex = (request, response) => {
-
+    serveFile(response, index, 'text/html');
 };
 
 const getCSS = (request, response) => {
-
+    serveFile(response, css, 'text/css');
 };
 
 const getBundle = (request, response) => {
-
+    serveFile(response, bundle, 'application/javascript');
 };
 
 module.exports = {

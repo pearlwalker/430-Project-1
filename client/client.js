@@ -1,4 +1,5 @@
 const collapsible = document.getElementsByClassName('collapsible');
+const requestForm = document.getElementsByClassName('requestForm');
 
 const handleResponse = async (response) => {
 

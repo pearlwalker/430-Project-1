@@ -6,7 +6,12 @@ const bundle = fs.readFileSync(`${__dirname}/../hosted/bundle.js`);
 const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
 const serveFile = (response, file, contentType) => {
-    
+    response.writeHead(200, {
+        'Content-Type': contentType,
+        'Content-Length': Buffer.byteLength(file, 'utf8'),
+    });
+    response.write(file);
+    response.end();
 };
 
 const getIndex = (request, response) => {

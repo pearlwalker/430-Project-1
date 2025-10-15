@@ -10,27 +10,39 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
 };
 
 const getTimezoneNames = (request, response) => {
-
+  const responseJSON = {
+  };
+  respondJSON(request, response, 200, responseJSON);
 };
 
 const getTimezonesInCountry = (request, response) => {
-
+  const responseJSON = {
+  };
+  respondJSON(request, response, 200, responseJSON);
 };
 
 const getCountriesWithTimezone = (request, response) => {
-
+  const responseJSON = {
+  };
+  respondJSON(request, response, 200, responseJSON);
 };
 
 const getTimezonesFromTime = (request, response) => {
-
+  const responseJSON = {
+  };
+  respondJSON(request, response, 200, responseJSON);
 };
 
 const newTimezone = (request, response) => {
-
+  const responseJSON = {
+  };
+  respondJSON(request, response, 200, responseJSON);
 };
 
 const changeGmtOffset = (request, response) => {
-
+  const responseJSON = {
+  };
+  respondJSON(request, response, 200, responseJSON);
 };
 
 const success = (request, response) => {

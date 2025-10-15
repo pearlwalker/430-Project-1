@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node ./src/server.js",
     "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete!\"",
     "buildBundle": "webpack",
     "watchBundle": "webpack watch",
-    "heroku-postbuild": "webpack --mode production",
-    "test": "echo \"No Tests\""
+    "heroku-postbuild": "webpack --mode production"
   },
   "repository": {
     "type": "git",

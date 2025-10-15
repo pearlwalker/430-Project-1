@@ -5,80 +5,80 @@ const jsonHandler = require('./jsonResponses.js');
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const urlStruct = {
-    '/': htmlHandler.getIndex,
-    '/styles.css': htmlHandler.getCSS,
-    '/bundle.js': htmlHandler.getBundle,
-    '/client.js': htmlHandler.getClient,
-    '/countries.json': htmlHandler.getCountries,
-    '/success': jsonHandler.success,
-    '/badRequest': jsonHandler.badRequest,
-    notFound: jsonHandler.notFound
+  '/': htmlHandler.getIndex,
+  '/styles.css': htmlHandler.getCSS,
+  '/bundle.js': htmlHandler.getBundle,
+  '/client.js': htmlHandler.getClient,
+  '/countries.json': htmlHandler.getCountries,
+  '/success': jsonHandler.success,
+  '/badRequest': jsonHandler.badRequest,
+  notFound: jsonHandler.notFound,
 };
 
 const parseBody = (request, response, handler) => {
-    const requestBody = [];
+  const requestBody = [];
 
-    request.on('error', (err) => {
-        console.dir(err);
-        response.statusCode = 400;
-        response.end();
-    });
+  request.on('error', (err) => {
+    console.dir(err);
+    response.statusCode = 400;
+    response.end();
+  });
 
-    request.on('data', (chunk) => {
-        requestBody.push(chunk);
-    });
+  request.on('data', (chunk) => {
+    requestBody.push(chunk);
+  });
 
-    request.on('end', () => {
-        const bodyToString = Buffer.concat(requestBody).toString();
-        request.body = queryObjects.parse(bodyToString);
+  request.on('end', () => {
+    const bodyToString = Buffer.concat(requestBody).toString();
+    request.body = queryObjects.parse(bodyToString);
 
-        handler(request, response);
-    });
+    handler(request, response);
+  });
 };
 
 const handlePost = (request, response, parsedUrl) => {
-    switch (parsedUrl.pathname) {
-        case '/api/newTimezone':
-            jsonHandler.newTimezone(request, response);
-            break;
-        case '/api/changeGmtOffset':
-            jsonHandler.changeGmtOffset(request, response);
-            break;
-    };
+  switch (parsedUrl.pathname) {
+    case '/api/newTimezone':
+      jsonHandler.newTimezone(request, response);
+      break;
+    case '/api/changeGmtOffset':
+      jsonHandler.changeGmtOffset(request, response);
+      break;
+  }
 };
 
 const handleGet = (request, response, parsedUrl) => {
-    switch (parsedUrl.pathname) {
-        case '/api/getTimezoneNames':
-            jsonHandler.getTimezoneNames(request, response);
-            break;
-        case '/api/getTimezonesInCountry':
-            jsonHandler.getTimezonesInCountry(request, response);
-            break;
-        case '/api/getCountriesWithTimezone':
-            jsonHandler.getCountriesWithTimezone(request, response);
-            break;
-        case '/api/getTimezonesFromTime':
-            jsonHandler.getTimezonesFromTime(request, response);
-            break;
-        default:
-            htmlHandler.getIndex(request, response);
-            break;
-    };
+  switch (parsedUrl.pathname) {
+    case '/api/getTimezoneNames':
+      jsonHandler.getTimezoneNames(request, response);
+      break;
+    case '/api/getTimezonesInCountry':
+      jsonHandler.getTimezonesInCountry(request, response);
+      break;
+    case '/api/getCountriesWithTimezone':
+      jsonHandler.getCountriesWithTimezone(request, response);
+      break;
+    case '/api/getTimezonesFromTime':
+      jsonHandler.getTimezonesFromTime(request, response);
+      break;
+    default:
+      htmlHandler.getIndex(request, response);
+      break;
+  }
 };
 
 const onRequest = (request, response) => {
-    const protocol = request.connection.encrypted ? 'https' : 'http';
-    const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
+  const protocol = request.connection.encrypted ? 'https' : 'http';
+  const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
 
-    request.query = Object.fromEntries(parsedUrl.searchParams);
+  request.query = Object.fromEntries(parsedUrl.searchParams);
 
-    if (urlStruct[parsedUrl.pathname]) {
-        return urlStruct[parsedUrl.pathname](request, response);
-    };
-    return urlStruct.notFound(request, response);
+  if (urlStruct[parsedUrl.pathname]) {
+    return urlStruct[parsedUrl.pathname](request, response);
+  }
+  return urlStruct.notFound(request, response);
 };
 
 http.createServer(onRequest).listen(port, () => {
-    console.log(`Listening on 127.0.0.1:${port}`);
+  console.log(`Listening on 127.0.0.1:${port}`);
 });

@@ -62,6 +62,9 @@ const handleGet = (request, response, parsedUrl) => {
     case '/client.js':
       htmlHandler.getClient(request, response);
       break;
+    case '/countries.json':
+      htmlHandler.getCountries(request, response);
+      break;
     case '/api/getTimezoneNames':
       jsonHandler.getTimezoneNames(request, response);
       break;

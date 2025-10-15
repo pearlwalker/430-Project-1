@@ -44,6 +44,8 @@ const handlePost = (request, response, parsedUrl) => {
     case '/api/changeGmtOffset':
       jsonHandler.changeGmtOffset(request, response);
       break;
+    default: 
+      break;
   }
 };
 

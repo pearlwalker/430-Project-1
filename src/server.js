@@ -21,7 +21,7 @@ const parseBody = (request, response, handler) => {
 
   request.on('end', () => {
     const bodyToString = Buffer.concat(requestBody).toString();
-    request.body = queryObjects.parse(bodyToString);
+    request.body = query.parse(bodyToString);
 
     handler(request, response);
   });
@@ -90,11 +90,11 @@ const onRequest = (request, response) => {
       handlePost(request, response, parsedUrl);
       break;
     case 'GET':
-      handleGet(request, response,parsedUrl);
+      handleGet(request, response, parsedUrl);
       break;
     default:
       handleGet(request, response, parsedUrl);
-  };
+  }
 };
 
 http.createServer(onRequest).listen(port, () => {

@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const respondJSON = (request, response, statusCode, jsonObject) => {
   const jsonString = JSON.stringify(jsonObject);
 

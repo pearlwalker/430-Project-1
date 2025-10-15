@@ -41,10 +41,10 @@ const parseBody = (request, response, handler) => {
 const handlePost = (request, response, parsedUrl) => {
   switch (parsedUrl.pathname) {
     case '/api/newTimezone':
-      jsonHandler.newTimezone(request, response);
+      parseBody(request, response, jsonHandler.newTimezone);
       break;
     case '/api/changeGmtOffset':
-      jsonHandler.changeGmtOffset(request, response);
+      parseBody(request, response, jsonHandler.changeGmtOffset);
       break;
     default: 
       break;

@@ -42,11 +42,13 @@
                     </h2>
                 </button>
                 <form action="/api/getTimezonesInCountry" class="requestForm">
-                    <label for="GTIC_name" class="inputLabels">Country Name</label>
-                    <input type="text" name="GTIC_name" id="GTIC_name">
-                    <label for="GTIC_unique" class="inputLabels">Exclude shared timezones?</label>
-                    <input type="checkbox" name="GTIC_unique" id="GTIC_unique">
-                    <input type="submit" value="Submit">
+                    <div class="formContent">
+                        <label for="GTIC_name" class="inputLabels">Country Name</label>
+                        <input type="text" name="GTIC_name" id="GTIC_name">
+                        <label for="GTIC_unique" class="inputLabels">Exclude shared timezones?</label>
+                        <input type="checkbox" name="GTIC_unique" id="GTIC_unique">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
             </div>
             <div class="endpoint">
@@ -60,15 +62,16 @@
                     </h2>
                 </button>
                 <form action="/api/getCountriesWithTimezone" class="requestForm">
-                    <label for="GCWT_tzName" class="inputLabels">tzName</label>
-                    <input type="text" name="tzName" id="GCWT_tzName">
-                    <label for="GCWT_tzShorthand" class="inputLabels">Abbreviation</label>
-                    <input type="text" name="tzShorthand" id="GCWT_tzShorthand">
-
-                    <label for="gmtOffsetName" class="inputLabels">UTC Offset</label>
-                    <input type="number" name="gmtOffsetName" id="GCWT_gmtOffset" min="-12" max="14" value="0"
-                        step="0.25">
-                    <input type="submit" value="Submit">
+                    <div class="formContent">
+                        <label for="GCWT_tzName" class="inputLabels">tzName</label>
+                        <input type="text" name="tzName" id="GCWT_tzName">
+                        <label for="GCWT_tzShorthand" class="inputLabels">Abbreviation</label>
+                        <input type="text" name="tzShorthand" id="GCWT_tzShorthand">
+                        <label for="gmtOffsetName" class="inputLabels">UTC Offset</label>
+                        <input type="number" name="gmtOffsetName" id="GCWT_gmtOffset" min="-12" max="14" value="0"
+                            step="0.25">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
             </div>
             <div class="endpoint">
@@ -82,9 +85,11 @@
                     </h2>
                 </button>
                 <form action="/api/getTimezonesFromTime" class="requestForm">
-                    <label for="GTFT_time" class="inputLabels">Time</label>
-                    <input type="time" name="GTFT_time" id="GTFT_time">
-                    <input type="submit" value="Submit">
+                    <div class="formContent">
+                        <label for="GTFT_time" class="inputLabels">Time</label>
+                        <input type="time" name="GTFT_time" id="GTFT_time">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
             </div>
             <div class="endpoint">
@@ -97,7 +102,9 @@
                     </h2>
                 </button>
                 <form action="/api/newTimezone" class="requestForm">
-                    <input type="submit" value="Submit">
+                    <div class="formContent">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
 
             </div>
@@ -112,7 +119,9 @@
 
                 </button>
                 <form action="/api/changeGmtOffset" class="requestForm">
-                    <input type="submit" value="Submit">
+                    <div class="formContent">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
             </div>
         </section>

@@ -5,6 +5,7 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
     "buildBundle": "webpack",
     "watchBundle": "webpack watch",
     "heroku-postbuild": "webpack --mode production",

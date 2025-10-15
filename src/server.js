@@ -53,8 +53,11 @@ const handlePost = (request, response, parsedUrl) => {
 
 const handleGet = (request, response, parsedUrl) => {
   switch (parsedUrl.pathname) {
-    case '/style.css':
+    case '/styles.css':
       htmlHandler.getCSS(request, response);
+      break;
+    case '/bundle.js':
+      htmlHandler.getBundle(request, response);
       break;
     case '/api/getTimezoneNames':
       jsonHandler.getTimezoneNames(request, response);

@@ -86,6 +86,9 @@ const onRequest = (request, response) => {
   const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
 
   switch (request.method) {
+    case 'POST':
+      handlePost(request, response, parsedUrl);
+      break;
     default:
       handleGet(request, response, parsedUrl);
   };

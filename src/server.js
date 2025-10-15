@@ -89,6 +89,9 @@ const onRequest = (request, response) => {
     case 'POST':
       handlePost(request, response, parsedUrl);
       break;
+    case 'GET':
+      handleGet(request, response,parsedUrl);
+      break;
     default:
       handleGet(request, response, parsedUrl);
   };

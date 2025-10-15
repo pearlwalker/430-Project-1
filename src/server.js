@@ -68,6 +68,9 @@ const handleGet = (request, response, parsedUrl) => {
     case '/success':
       jsonHandler.success(request, response);
       break;
+    case '/badRequest':
+      jsonHandler.badRequest(request, response);
+      break;
     case '/api/getTimezoneNames':
       jsonHandler.getTimezoneNames(request, response);
       break;

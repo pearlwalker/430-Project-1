@@ -6,17 +6,6 @@ const jsonHandler = require('./jsonResponses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
-const urlStruct = {
-  '/': htmlHandler.getIndex,
-  '/styles.css': htmlHandler.getCSS,
-  '/bundle.js': htmlHandler.getBundle,
-  '/client.js': htmlHandler.getClient,
-  '/countries.json': htmlHandler.getCountries,
-  '/success': jsonHandler.success,
-  '/badRequest': jsonHandler.badRequest,
-  notFound: jsonHandler.notFound,
-};
-
 const parseBody = (request, response, handler) => {
   const requestBody = [];
 

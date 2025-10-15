@@ -58,6 +58,14 @@
                     </h2>
                 </button>
                 <form action="/api/getCountriesWithTimezone" class="requestForm">
+                    <label for="GCWT_tzName" class="inputLabels">tzName</label>
+                    <input type="text" name="tzName" id="GCWT_tzName">
+                    <label for="GCWT_tzShorthand" class="inputLabels">Abbreviation</label>
+                    <input type="text" name="tzShorthand" id="GCWT_tzShorthand">
+
+                    <label for="gmtOffsetName" class="inputLabels">UTC Offset</label>
+                    <input type="number" name="gmtOffsetName" id="GCWT_gmtOffset" min="-12" max="14" value="0"
+                        step="0.25">
                     <input type="submit" value="Submit">
                 </form>
             </div>

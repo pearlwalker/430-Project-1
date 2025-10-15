@@ -53,6 +53,9 @@ const handlePost = (request, response, parsedUrl) => {
 
 const handleGet = (request, response, parsedUrl) => {
   switch (parsedUrl.pathname) {
+    case '/':
+      htmlHandler.getIndex(request, response);
+      break;
     case '/styles.css':
       htmlHandler.getCSS(request, response);
       break;

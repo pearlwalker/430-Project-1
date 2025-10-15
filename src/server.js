@@ -59,6 +59,9 @@ const handleGet = (request, response, parsedUrl) => {
     case '/bundle.js':
       htmlHandler.getBundle(request, response);
       break;
+    case '/client.js':
+      htmlHandler.getClient(request, response);
+      break;
     case '/api/getTimezoneNames':
       jsonHandler.getTimezoneNames(request, response);
       break;

@@ -46,13 +46,16 @@ const handlePost = (request, response, parsedUrl) => {
     case '/api/changeGmtOffset':
       parseBody(request, response, jsonHandler.changeGmtOffset);
       break;
-    default: 
+    default:
       break;
   }
 };
 
 const handleGet = (request, response, parsedUrl) => {
   switch (parsedUrl.pathname) {
+    case '/style.css':
+      htmlHandler.getCSS(request, response);
+      break;
     case '/api/getTimezoneNames':
       jsonHandler.getTimezoneNames(request, response);
       break;

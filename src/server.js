@@ -84,6 +84,11 @@ const handleGet = (request, response, parsedUrl) => {
 const onRequest = (request, response) => {
   const protocol = request.connection.encrypted ? 'https' : 'http';
   const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
+
+  switch (request.method) {
+    default:
+      handleGet(request, response, parsedUrl);
+  };
 };
 
 http.createServer(onRequest).listen(port, () => {

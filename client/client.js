@@ -1,7 +1,6 @@
 const collapsibles = document.querySelectorAll('.collapsible');
 const requestForm = document.querySelectorAll('.requestForm');
 
-
 const handleResponse = async (response) => {
 
 };
@@ -14,6 +13,11 @@ const init = () => {
     collapsibles.forEach((button, index) => {
         button.addEventListener('click', (e) => {
             const content = requestForm[index];
+            requestForm.forEach((form) => {
+                if(form !== content) {
+                    form.style.display = 'none';
+                };
+            });
         });
     });
 };

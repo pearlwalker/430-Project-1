@@ -33,3 +33,7 @@ body {
 .collapsible {
     border-radius: 10px;
 }
+
+.endpoint {
+    margin: 0 0 0.5rem;
+}

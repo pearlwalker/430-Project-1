@@ -84,7 +84,7 @@ const handleGet = (request, response, parsedUrl) => {
       jsonHandler.getTimezonesFromTime(request, response);
       break;
     default:
-      htmlHandler.getIndex(request, response);
+      jsonHandler.notFound(request, response);
       break;
   }
 };

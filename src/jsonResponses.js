@@ -1,6 +1,5 @@
 const fs = require('fs');
-const file = fs.readFileSync(`${__dirname}/../data/countries.json`);
-const data = JSON.parse(file);
+const countries = JSON.parse(fs.readFileSync(`${__dirname}/../data/countries.json`));
 
 const respondJSON = (request, response, statusCode, jsonObject) => {
   const jsonString = JSON.stringify(jsonObject);
@@ -15,12 +14,9 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
 
 const getTimezoneNames = (request, response) => {
   const responseJSON = {
-    
   };
-
-(request, response, 200, responseJSON);
+  respondJSON(request, response, 200, responseJSON);
 };
-
 const getTimezonesInCountry = (request, response) => {
   const responseJSON = {
   };

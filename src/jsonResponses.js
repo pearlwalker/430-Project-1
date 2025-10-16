@@ -31,6 +31,9 @@ const getTimezoneNames = (request, response) => {
   respondJSON(request, response, 200, responseJSON);
 };
 const getTimezonesInCountry = (request, response) => {
+  if (!request.query.GTIC_name) {
+    return respondJSON(request, response, 404, { message: "404" })
+  }
   const responseJSON = {
   };
   respondJSON(request, response, 200, responseJSON);

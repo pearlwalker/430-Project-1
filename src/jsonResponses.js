@@ -13,7 +13,12 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
 };
 
 const getTimezoneNames = (request, response) => {
+  const timezoneArray = []
+  for (let i = 0; i < countries.length; i++) {
+    timezoneArray.push(countries[i].name)
+  }
   const responseJSON = {
+    timezoneArray
   };
   respondJSON(request, response, 200, responseJSON);
 };

@@ -16,7 +16,14 @@ const getTimezoneNames = (request, response) => {
   const timezoneArray = []
   for (let i = 0; i < countries.length; i++) {
     const tzFullData = countries[i].timezones;
-    timezoneArray.push(tzFullData);
+    for (let x = 0; x < tzFullData.length; x++) {
+      const tzCutData = [
+        tzFullData[x].gmtOffsetName,
+        tzFullData[x].abbreviation,
+        tzFullData[x].tzName
+      ]
+      timezoneArray.push(tzCutData)
+    }
   };
   const responseJSON = {
     timezoneArray

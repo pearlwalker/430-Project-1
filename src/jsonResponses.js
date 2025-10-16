@@ -14,6 +14,7 @@ const respondJSON = (request, response, statusCode, jsonObject) => {
 
 const getTimezoneNames = (request, response) => {
   const timezoneArray = []
+  const tzFiltered = new Set();
   for (let i = 0; i < countries.length; i++) {
     const tzFullData = countries[i].timezones;
     for (let x = 0; x < tzFullData.length; x++) {
@@ -22,11 +23,14 @@ const getTimezoneNames = (request, response) => {
         tzFullData[x].abbreviation,
         tzFullData[x].tzName
       ]
-      timezoneArray.push(tzCutData)
+      timezoneArray.push(tzCutData);
     }
   };
+  timezoneArray.forEach((i) => {
+    tzFiltered.add(i)
+  })
   const responseJSON = {
-    timezoneArray
+    tzFiltered
   };
   respondJSON(request, response, 200, responseJSON);
 };
